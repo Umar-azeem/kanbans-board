@@ -34,9 +34,9 @@ type AddtaskProps = {
             <input
               type="text"
               {...register("Name", { required: true })}
-              placeholder={errors.Name ? "Name is required." : "e.g. Myboard"}
+              placeholder="e.g. Myboard"
               className={`bg-transparent w-full text-md p-2 rounded-md border "border-gray-500" ${errors.Name ? "border-red-600 " :"border-gray-500" }  `}
-            />
+            />{errors.Name && <p className="text-red-700 text-sm">Name is required.</p>}
           </div>
           <div className="flex flex-col gap-2 ">
             <p>Board columns</p>

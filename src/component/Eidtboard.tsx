@@ -30,15 +30,15 @@ function Eidtboard({ handleEidt }: EidtboardProps) {
                 d="M6 18L18 6M6 6l12 12"
               />
             </svg></div>
-        <div className="">
-          <p>Board Name</p>{" "}
-          <input
+            <div className="">
+            <p>Board Name</p>{" "}
+            <input
               type="text"
               {...register("Name", { required: true })}
-              placeholder={errors.Name ? "Name is required." : "e.g. Myboard"}
+              placeholder="e.g. Myboard"
               className={`bg-transparent w-full text-md p-2 rounded-md border "border-gray-500" ${errors.Name ? "border-red-600 " :"border-gray-500" }  `}
-            />
-        </div>
+            />{errors.Name && <p className="text-red-700 text-sm">Name is required.</p>}
+          </div>
         <div className="flex flex-col gap-2 ">
           <p>Board columns</p>
           <div className="flex justify-center items-center">

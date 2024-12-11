@@ -13,7 +13,7 @@ function Inputfrom({ handleFrom }: InputfromProps) {
   return (
     <>
       <form onSubmit={handleSubmit((data) => console.log(data))}>
-        <div className="mt-0 lg:mt-8 grid grid-flow-row p-4 gap-7 font-semibold rounded-lg text-white m-auto text-sm lg:text-lg max-w-lg bg-[#2c2e3f]">
+        <div className="mt-0 lg:mt-8 grid grid-flow-row p-4 gap-5 font-semibold rounded-lg text-white m-auto text-sm lg:text-lg max-w-lg bg-[#2c2e3f]">
           <div className="flex justify-between"><h1>Add New Task</h1> <svg
           onClick={() => handleFrom()}
                 className="h-8 w-8 text-gray-500 hover:text-violet-700"
@@ -33,28 +33,29 @@ function Inputfrom({ handleFrom }: InputfromProps) {
             <input
               type="text"
               {...register("Title", { required: true })}
-              placeholder={errors.Title ? "Title is required." : "e.g. Myboard"}
+              placeholder="e.g. Myboard"
               className={`bg-transparent w-full text-md p-2 rounded-md border  ${errors.Title ? "border-red-600 " :"border-gray-500" }  `}
-            />
+            />{errors.Title && <p className="text-red-700 text-sm">Title is required</p>}
           </div>
           <div>
             <p>Description (optional)</p>
             <input
               type="text"
               {...register("Description",{required : true})}
-              placeholder={errors.Description ? "description is required" : "e.g. Start Learning Things"}
+              placeholder="e.g. Start Learning Things"
               className={`bg-transparent w-full text-md p-2 rounded-md border ${errors.Description ? "border-red-600 " :"border-gray-500" } `}
-              />
+              />{errors.Description && <p className="text-red-700 text-sm">Description is required</p>}
           </div>
           <div className="flex flex-col gap-1">
             <p>Subtasks</p>
             <div className="flex justify-center items-center">
-              <input
+              <div className="flex flex-col w-full"><input
                 type="text"
                 {...register("Subtasks",{required : true})}
-                placeholder={errors.Subtasks ? "name is required" : "e.g. Myboard"}
+                placeholder="e.g. Myboard"
                 className={`bg-transparent w-full text-md p-2 rounded-md border  ${errors.Subtasks ? "border-red-600 " :"border-gray-500" }`}
-              />
+              />{errors.Subtasks && <p className="text-red-700 text-sm">Subtasks is required</p> }
+              </div>
               <svg
                 className="h-8 w-8 text-gray-500 hover:text-violet-500"
                 fill="none"
@@ -68,6 +69,7 @@ function Inputfrom({ handleFrom }: InputfromProps) {
                   d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
+
             </div>
             <button className="rounded-full flex justify-center items-center p-2 bg-white text-violet-500 text-center font-semibold">
               <svg
