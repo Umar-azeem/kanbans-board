@@ -13,7 +13,7 @@ function Inputfrom({ handleFrom }: InputfromProps) {
   return (
     <>
       <form onSubmit={handleSubmit((data) => console.log(data))}>
-        <div className="mt-0 lg:mt-8 grid grid-flow-row p-4 gap-5 font-semibold rounded-lg text-white m-auto text-sm lg:text-lg max-w-lg bg-[#2c2e3f]">
+        <div className="mt-0 lg:mt-8 grid grid-flow-row p-4 gap-3 lg:gap-5 font-semibold rounded-lg text-white m-auto text-sm lg:text-lg max-w-lg bg-[#2c2e3f]">
           <div className="flex justify-between"><h1>Add New Task</h1> <svg
           onClick={() => handleFrom()}
                 className="h-8 w-8 text-gray-500 hover:text-violet-700"
@@ -91,7 +91,6 @@ function Inputfrom({ handleFrom }: InputfromProps) {
           <div className="flex flex-col text-lg gap-2">
             <p>Status</p>
   <select
-  
    {...register("Status",{required: true})}
    className={`bg-transparent w-full text-md p-2 rounded-md border  ${errors.status ? "border-red-600 " :"border-gray-500" }`} id="cars" name="cars">
     <option className="text-black bg-transparent w-full text-md p-2 " value="volvo">todo 1</option>
