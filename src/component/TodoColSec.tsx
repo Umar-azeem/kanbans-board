@@ -70,14 +70,22 @@ function TodoColSec({ handleSidebar, isDark  }: TodoColSecProps) {
   <div className=" rounded-lg flex  flex-col gap-3 p-4 w-60">
     
     
-    <div className="backdrop-blur-lg z-0  bg-gray-400/50 rounded-lg p-3 ">
+    <div className="backdrop-blur-lg z-0  bg-zinc-600/100 rounded-lg p-3 ">
       <div className="font-semibold text-lg">ass</div>
       <div className="text-gray-500/100 text-sm">0 of 1 subtasks</div>
     </div>
-  <div className="backdrop-blur-lg bg-gray-400/50 rounded-lg p-3 ">
+  <div className="backdrop-blur-lg bg-zinc-600/100 rounded-lg p-3 ">
       <div className="font-semibold text-lg">ass</div>
       <div className="text-gray-500/100 text-sm">0 of 1 subtasks</div>
     </div>
+    <div className="backdrop-blur-lg bg-zinc-600/100 rounded-lg p-3 ">
+      <div className="font-semibold text-lg">ass</div>
+      <div className="text-gray-500/100 text-sm">0 of 1 subtasks</div>
+    </div>
+    
+    
+    
+
     
     
 
